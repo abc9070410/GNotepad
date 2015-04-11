@@ -19,8 +19,6 @@
 - Sketchy icons (https://www.iconfinder.com/iconsets/Sketchy_icons_by_ma)
 - Author : Mathilde (http://mathilde.deviantart.com/)
 
-
-
 ## License
 
 - GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
