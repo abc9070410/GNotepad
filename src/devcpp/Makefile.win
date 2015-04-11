@@ -1,0 +1,39 @@
+# Project: project_notepad
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../src/main.o ../src/callbacks.o ../src/interface.o ../src/support.o $(RES)
+LINKOBJ  = ../src/main.o ../src/callbacks.o ../src/interface.o ../src/support.o $(RES)
+LIBS =  -L"lib" -mwindows -limm32 -lshell32 -lole32 -luuid -lintl -lcairo.dll -lpangowin32-1.0.dll -latk-1.0.dll -lgdk_pixbuf-2.0.dll -lgdk-win32-2.0.dll -lglib-2.0.dll -lgmodule-2.0.dll -lgobject-2.0.dll -lgthread-2.0.dll -lgtk-win32-2.0.dll -lpango-1.0.dll 
+INCS =  -I"include"  -I"." 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include"  -I"." 
+BIN  = project_notepad.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS) -I"D:\Dev-Cpp\\include\gtk-2.0" -I"D:\Dev-Cpp\\lib\gtk-2.0\include" -I"D:\Dev-Cpp\\include\atk-1.0" -I"D:\Dev-Cpp\\include\pango-1.0" -I"D:\Dev-Cpp\\include\cairo" -I"D:\Dev-Cpp\\include\glib-2.0" -I"D:\Dev-Cpp\\include\glib-2.0\glib" -I"D:\Dev-Cpp\\lib\glib-2.0" -I"D:\Dev-Cpp\\lib\glib-2.0\include" -mno-cygwin -mms-bitfields 
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before project_notepad.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "project_notepad.exe" $(LIBS)
+
+../src/main.o: ../src/main.c
+	$(CC) -c ../src/main.c -o ../src/main.o $(CFLAGS)
+
+../src/callbacks.o: ../src/callbacks.c
+	$(CC) -c ../src/callbacks.c -o ../src/callbacks.o $(CFLAGS)
+
+../src/interface.o: ../src/interface.c
+	$(CC) -c ../src/interface.c -o ../src/interface.o $(CFLAGS)
+
+../src/support.o: ../src/support.c
+	$(CC) -c ../src/support.c -o ../src/support.o $(CFLAGS)
